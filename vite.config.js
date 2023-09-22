@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/FastCoding_LeThuyLanChi",
   plugins: [react()],
   resolve: {
     alias: {
