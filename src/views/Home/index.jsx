@@ -18,7 +18,7 @@ import Item6 from '@/assets/images/collect-item6.png'
 import './style.scss'
 import Footer from '@/layout/Footer'
 // import PageScroll from 'react-page-scroll'
-import { FullPage, Slide } from 'react-full-page'
+// import { FullPage, Slide } from 'react-full-page'
 
 const Index = () => {
   return (
