@@ -1,0 +1,99 @@
+@function pxToRem($px) {
+  $a: calc($px * 1440 / 3800);
+  @return #{calc($a / 16)}rem;
+}
+@function pxToRemO($px) {
+  @return #{calc($px / 16)}rem;
+}
+
+@mixin typoFromPxO($font-size, $font-weight, $line-height) {
+  font-size: #{$font-size / 16}rem;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin typoFromPx($font-size, $font-weight, $line-height) {
+  $s: calc($font-size * 12 / 20);
+  $h: calc($line-height * 12 /20);
+  font-size: #{$s}pt;
+  font-weight: $font-weight;
+  line-height: #{$h}pt;
+}
+
+@mixin typo($font-size, $font-weight, $line-height) {
+  font-size: $font-size !important;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin text-style($font-size, $font-weight, $line-height, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+.fs-10 {
+  @include typoFromPx(10, 400, 12);
+}
+.fs-12 {
+  @include typoFromPx(12, 400, 15);
+} 
+.fs-13 {
+  @include typoFromPx(14, 400, 19.5);
+}
+.fs-14 {
+  @include typoFromPx(14, 400, 20);
+}
+.fs-15 {
+  @include typoFromPx(15, 400, 26);
+}
+.fs-16 {
+  @include typoFromPx(16, 400, 24);
+}
+.fs-17 {
+  @include typoFromPx(17, 400, 28);
+}
+.fs-18 {
+  @include typoFromPx(18, 400, 29);
+}
+.fs-20 {
+  @include typoFromPx(20, 400, 30);
+}  
+.fs-22 {
+  @include typoFromPx(22, 400, 30);
+}
+.fs-24 {
+  @include typoFromPx(24, 400, 36);
+}
+.fs-30 {
+  @include typoFromPx(30, 400, 32);
+}
+.fs-32 {
+  @include typoFromPx(32, 400, 48);
+}
+.fs-36 {
+  @include typoFromPx(36, 400, 44);
+}  
+.fs-38 {
+  @include typoFromPx(38, 400, 57);
+}  
+.fs-40 {
+  @include typoFromPx(40, 400, 48);
+}
+.fs-48 {
+  @include typoFromPx(48, 400, 72px);
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}

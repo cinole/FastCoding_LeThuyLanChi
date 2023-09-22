@@ -1,0 +1,90 @@
+@import '@/style/_typography.scss';
+@import '@/style/_color.scss';
+@import '@/style/_helper.scss';
+
+.footer {
+  background: #d5d5d5;
+  & > div {
+    width: 96%;
+    margin: 0 auto;
+  }
+  img {
+    width: pxToRem(309);
+  }
+  .list-options,
+  .list-socials {
+    gap: 60px;
+    div {
+      color: #919191;
+      @include typoFromPx(15.5, 600, 22.34);
+      transition: all 0.2s linear;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(200%, -50%);
+        width: 6px;
+        height: 6px;
+        transition: all 0.2s linear;
+      }
+      &:hover {
+        color: #000;
+        @extend .line-left;
+        &::after {
+          border-radius: 50%;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  .list-socials {
+    div {
+      font-weight: 400;
+      color: #000;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  .socials span {
+    color: $textDarkGrey;
+  }
+  .wp-address {
+    color: $textDarkGrey;
+    span {
+      color: #000;
+      font-weight: 500;
+    }
+  }
+  .wp-contact {
+    label {
+      @include typoFromPx(15.5, 700, 22.34);
+    }
+    p {
+      max-width: pxToRem(655);
+      @include typoFromPx(12.5, 400, 16.34);
+      color: $textDarkGrey;
+    }
+    input {
+      width: pxToRem(378);
+      height: pxToRem(68);
+      border: unset;
+      border: 1px solid #bababa;
+    }
+    button {
+      width: pxToRem(102);
+      height: pxToRem(68);
+      background-color: #000;
+      border-radius: 0;
+      span {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border: 2px solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

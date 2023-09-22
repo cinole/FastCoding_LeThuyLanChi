@@ -1,0 +1,396 @@
+@import '@/style/_typography.scss';
+@import '@/style/_color.scss';
+
+.section1 {
+  position: relative;
+  height: pxToRem(1430);
+  img {
+    //   height: 100%;
+    width: 65.23%;
+  }
+  &__content {
+    position: absolute;
+    bottom: 40%;
+    right: 41.5%;
+    p {
+      color: $textDarkGrey;
+      @include typoFromPx(21.5, 500, 22.34);
+    }
+    h2 {
+      letter-spacing: 6pt;
+      @include typoFromPx(48.5, 800, 22.34);
+      text-shadow: 0px 26px 81px rgba(0, 15, 26, 0);
+    }
+  }
+  &__gear {
+    position: absolute !important;
+    bottom: 24%;
+    right: calc(65.23% + 60px);
+    margin-top: pxToRem(225);
+    @include typoFromPx(21.5, 500, 22.34);
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: pxToRem(30);
+      height: pxToRem(30);
+      border: 2px solid $primary;
+      border-width: 0 1px 1px 0;
+      transform: translate(200%, -50%) rotate(-45deg);
+    }
+  }
+}
+.home {
+
+  .section2 {
+    margin-top: pxToRem(400);
+    position: relative;
+    height: pxToRem(1144);
+    img {
+      //   height: 100%;
+      width: 68.4%;
+    }
+    &__content {
+      position: absolute;
+      top: 50%;
+      right: 6%;
+      transform: translate(0, -58%);
+      width: 50%;
+      //   height: pxToRem(433);
+      border: 3px solid $primary;
+      padding: 40px 40px 0;
+      p {
+        width: 50%;
+        @include typoFromPx(12.5, 400, 39.34);
+        color: $textLightGrey;
+      }
+      .arrow {
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+        transform: translateY(98%);
+        width: pxToRem(389);
+        img {
+          height: pxToRem(156);
+          width: auto;
+        }
+      }
+    }
+    &__title {
+      position: absolute;
+      top: 34%;
+      right: 37%;
+      letter-spacing: 6pt;
+      @include typoFromPx(48.5, 700, 22.34);
+      text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+    }
+    &__sub {
+      position: absolute;
+      top: 45%;
+      right: 36%;
+      @include typoFromPx(21.5, 500, 22.34);
+      text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+    }
+  }
+
+  .section3 {
+    background-color: rgb(213, 213, 213, 0.42);
+    margin-top: pxToRem(400);
+    padding: pxToRem(400) 0;
+    position: relative;
+    img {
+      //   height: 100%;
+      width: 68.4%;
+    }
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 6%;
+      transform: translate(0, -50%);
+      width: 50%;
+      //   height: pxToRem(433);
+      border: 3px solid $primary;
+      padding: 20px 50px 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 0;
+        transform: translate(16px, -100%);
+        height: pxToRem(41);
+        width: pxToRem(637);
+        background: url('@/assets/images/text-decor.png') no-repeat center/100%;
+      }
+      p {
+        width: 50%;
+        @include typoFromPx(12.5, 400, 39.34);
+        color: $textLightGrey;
+      }
+      .arrow {
+        position: absolute;
+        left: 20%;
+        bottom: 0;
+        transform: translateY(98%);
+        width: pxToRem(389);
+        background-color: rgb(237, 237, 237);
+        img {
+          height: pxToRem(156);
+          width: auto;
+        }
+      }
+      .title {
+        position: absolute;
+        top: 34%;
+        right: -40%;
+        letter-spacing: 6pt;
+        @include typoFromPx(48.5, 700, 22.34);
+        text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+      }
+      .sub {
+        position: absolute;
+        top: 48%;
+        right: 1%;
+        @include typoFromPx(21.5, 500, 22.34);
+        text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+      }
+    }
+  }
+
+  .section4 {
+    margin-top: pxToRem(400);
+    h2 {
+      letter-spacing: 8pt;
+      @include typoFromPx(60.5, 700, 65.34);
+    }
+    &__under-title {
+      width: pxToRem(1101);
+      @include typoFromPx(21.5, 500, 22.34);
+      background-color: rgb(184, 164, 126, 0.42);
+      color: $textDarkGrey;
+    }
+
+    &__content {
+      .num {
+        width: fit-content;
+        letter-spacing: 8pt;
+        @include typoFromPx(60.5, 700, 60.34);
+        color: #38383887;
+      }
+      .des {
+        h5 {
+          width: fit-content;
+          letter-spacing: 4pt;
+          @include typoFromPx(26.5, 800, 26.34);
+          color: $textDarkGrey;
+          white-space: nowrap;
+        }
+        p {
+          // @include typoFromPxO(30, 400, 1.5);
+          @include typoFromPx(14.5, 400, 22.34);
+          color: $textDarkGrey;
+          text-align: justify;
+          // word-spacing: -1px;
+          // letter-spacing: -0.5px;
+          span {
+            width: fit-content;
+            @include typoFromPx(15.5, 700, 22.34);
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              right: 0;
+              width: 8px;
+              height: 8px;
+              border: 3px solid #000;
+              border-width: 0 2px 2px 0;
+              transform: translate(200%, -50%) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    .row1 {
+      width: 80%;
+      max-width: pxToRem(3200);
+      .detail1 {
+        // width: 80%;
+        img {
+          width: 51%;
+          min-width: pxToRem(1912);
+        }
+        .des {
+          width: fit-content;
+          margin-left: pxToRem(370);
+
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            top: -4%;
+            left: 6%;
+            transform: translate(0, -100%);
+            width: 0;
+            height: pxToRem(277);
+            border: 1px solid #000;
+          }
+
+          h5 {
+            position: relative;
+            z-index: 1;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              background-color: rgb(184, 164, 126, 0.42);
+            }
+          }
+          p {
+            max-width: pxToRem(823);
+          }
+        }
+      }
+      .detail2 {
+        position: absolute;
+        left: 96%;
+        bottom: -2%;
+        transform: translateX(-92%);
+        width: pxToRem(1174);
+        img {
+          width: 100%;
+          min-width: pxToRem(1174);
+        }
+        .des {
+          margin-left: pxToRem(400);
+
+          position: relative;
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: -4%;
+            left: 0;
+            transform: translate(0, -100%);
+            width: 0;
+            height: pxToRem(136);
+            border: 1px solid #000;
+          }
+          &::after {
+            top: unset;
+            bottom: 0;
+            transform: translate(0, 26%);
+            height: pxToRem(277);
+          }
+
+          p {
+            max-width: pxToRem(1082);
+          }
+          img {
+            width: pxToRem(360);
+            min-width: unset;
+          }
+        }
+      }
+    }
+    .row2 {
+      position: relative;
+      padding-top: 80px;
+      width: 80%;
+      max-width: pxToRem(3200);
+      .detail4 {
+        img {
+          width: 36%;
+          min-width: pxToRem(1360);
+          margin-right: 44px;
+          margin-top: -22px;
+          &.image-decor-left {
+            position: absolute;
+            width: pxToRem(868);
+            min-width: unset;
+            right: 47%;
+            bottom: 26%;
+          }
+          &.image-decor-bottom {
+            position: absolute;
+            width: pxToRem(367);
+            min-width: unset;
+            right: 0;
+            bottom: 0;
+            transform: translateY(90%);
+          }
+        }
+        .num {
+          position: relative;
+          z-index: 1;
+        }
+        .des {
+          width: pxToRem(928);
+          p {
+            max-width: pxToRem(1420);
+          }
+          img {
+            width: pxToRem(360);
+            min-width: unset;
+          }
+        }
+      }
+      .detail3 {
+        width: 32%;
+        min-width: pxToRem(1200);
+        position: absolute;
+        bottom: 41%;
+        right: 47%;
+        img {
+          width: 100%;
+          margin-top: -24px;
+        }
+        .num {
+          position: relative;
+          z-index: 1;
+          transform: translateX(60%);
+        }
+      }
+    }
+    .list-items {
+      width: 80%;
+      max-width: pxToRem(3200);
+      margin-left: pxToRem(200);
+      margin-bottom: pxToRem(400);
+
+      img {
+        width: pxToRem(327);
+        height: pxToRem(327);
+        object-fit: cover;
+      }
+      div {
+        position: relative;
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          transition: all 0.2s linear;
+        }
+        &:hover::after {
+          inset: 0;
+          background-color: rgb(0, 0, 0, 0.6);
+        }
+        &::before {
+          width: pxToRem(89);
+          height: pxToRem(89);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+        }
+        &:hover::before {
+          background: url('@/assets/images/icon-plus.png') no-repeat center/100%;
+        }
+      }
+    }
+  }
+}

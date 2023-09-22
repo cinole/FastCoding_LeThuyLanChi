@@ -1,0 +1,13 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$primaryFont: 'Montserrat', sans-serif;
+$secondaryFont: 'Roboto', sans-serif;
+
+.font-primary {
+  font-family: $primaryFont !important;
+}
+.font-secondary {
+  font-family: $secondaryFont !important;
+}

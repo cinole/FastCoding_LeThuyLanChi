@@ -1,0 +1,62 @@
+@import '@/style/_typography.scss';
+@import '@/style/_color.scss';
+@import '@/style/_helper.scss';
+
+.header {
+  position: absolute;
+  z-index: 99;
+  &__logo {
+    position: relative;
+    width: pxToRem(438);
+    transform: translateX(pxToRem(-22));
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: inherit;
+      height: pxToRem(438);
+      border-radius: 50%;
+      background: $primary;
+    }
+    img {
+      position: relative;
+      height: pxToRem(124);
+      z-index: 1;
+      // width: pxToRem(309);
+    }
+  }
+  &__nav {
+    position: relative;
+    margin-left: pxToRem(296);
+    li a {
+      @include typoFromPx(15, 700, 22.34);
+      &.active {
+        background-color: unset !important;
+        @extend .line-left;
+        // position: relative;
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   top: 50%;
+        //   left: 0;
+        //   transform: translate(-100%, -50%);
+        //   width: 77px;
+        //   height: 3px;
+        //   background: $primary;
+        // }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(50%, -50%);
+          border-radius: 50%;
+          background-color: $primary;
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+  }
+}
