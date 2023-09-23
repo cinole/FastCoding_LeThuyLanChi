@@ -189,7 +189,7 @@ const Index = () => {
                       <img src={CollectImage3} alt="" />
                     </div>
                   </div>
-                  <div className="list-items d-flex flex-wrap justify-content-center gap-4">
+                  <div className="list-items d-flex flex-wrap justify-content-center justify-content-md-start gap-4">
                     {[Item1, Item2, Item3, Item4, Item5, Item6].map((i) => (
                       <div key={i}>
                         <img src={i} alt="" />

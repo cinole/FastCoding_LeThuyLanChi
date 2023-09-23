@@ -408,14 +408,12 @@
       .detail2 {
         position: absolute;
         left: 96%;
-        bottom: -2%;
+        bottom: 0;
         transform: translateX(-92%);
         width: pxToRem(1174);
         z-index: 1;
         @media (max-width: $screenLarge) {
           bottom: -10%;
-        }
-        @media (max-width: $screenExtraSmall) {
           left: 100%;
         }
         @media (max-width: $screenExtraSmall) {
@@ -503,7 +501,11 @@
           z-index: 1;
         }
         .des {
-          width: pxToRem(928);
+          width: pxToRem(1028);
+          max-width: 50%;
+          @media (max-width: $screenMedium) {
+            margin-right: -3rem;
+          }
           @media (max-width: $screenExtraSmall) {
             width: 50%;
           }
@@ -514,7 +516,7 @@
             }
           }
           p {
-            max-width: pxToRem(1420);
+            max-width: pxToRem(1028);
           }
           img {
             width: pxToRem(360);
@@ -526,7 +528,7 @@
         width: 32%;
         min-width: pxToRem(1200);
         position: absolute;
-        bottom: 46%;
+        bottom: 42%;
         right: 47%;
         @media (max-width: $screenExtraSmall) {
           min-width: 50%;

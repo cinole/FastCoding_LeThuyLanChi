@@ -12,13 +12,13 @@
   }
   .list-options,
   .list-socials {
-    gap: 3.75rem;
+    gap: 3rem;
     @media (max-width: $screenExtraSmall) {
       gap: 2rem;
     }
     div {
+      @include typoFromPx(13.5, 600, 18.34);
       color: #919191;
-      @include typoFromPx(15.5, 600, 22.34);
       transition: all 0.2s linear;
       &::after {
         content: '';
@@ -50,9 +50,11 @@
     }
   }
   .socials span {
+    @include typoFromPx(13.5, 600, 18.34);
     color: $textDarkGrey;
   }
   .wp-address {
+    @include typoFromPx(12.5, 300, 18.34);
     color: $textDarkGrey;
     span {
       color: #000;
@@ -61,11 +63,11 @@
   }
   .wp-contact {
     label {
-      @include typoFromPx(15.5, 700, 22.34);
+      @include typoFromPx(12.5, 700, 18.34);
     }
     p {
-      max-width: pxToRem(655);
-      @include typoFromPx(12.5, 400, 16.34);
+      max-width: pxToRem(555);
+      @include typoFromPx(10.5, 400, 14.34);
       color: $textDarkGrey;
     }
     input {
