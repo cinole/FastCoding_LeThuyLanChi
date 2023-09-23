@@ -9,23 +9,23 @@ const menus = [
   {
     label: 'navy salt',
     key: 'navy-salt',
-    path: '#navy'
+    path: 'navy'
   },
   {
     label: 'voyager',
     key: 'voyager',
-    path: '#voyager'
+    path: 'voyager'
   },
-  { label: 'drifter', key: 'drifter', path: '#drifter' },
+  { label: 'drifter', key: 'drifter', path: 'drifter' },
   {
     label: 'collection',
     key: 'collection',
-    path: '#collection'
+    path: 'collection'
   },
   {
     label: 'contact',
     key: 'contact',
-    path: '#contact'
+    path: 'contact'
   }
 ]
 

@@ -1,47 +1,100 @@
-@import '@/style/_typography.scss';
-@import '@/style/_color.scss';
+@import '@/style/_variables.scss';
 
-.section1 {
-  position: relative;
-  height: pxToRem(1430);
-  img {
-    //   height: 100%;
-    width: 65.23%;
-  }
-  &__content {
-    position: absolute;
-    bottom: 40%;
-    right: 41.5%;
-    p {
-      color: $textDarkGrey;
-      @include typoFromPx(21.5, 500, 22.34);
-    }
-    h2 {
-      letter-spacing: 6pt;
-      @include typoFromPx(48.5, 800, 22.34);
-      text-shadow: 0px 26px 81px rgba(0, 15, 26, 0);
-    }
-  }
-  &__gear {
-    position: absolute !important;
-    bottom: 24%;
-    right: calc(65.23% + 60px);
-    margin-top: pxToRem(225);
-    @include typoFromPx(21.5, 500, 22.34);
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: pxToRem(30);
-      height: pxToRem(30);
-      border: 2px solid $primary;
-      border-width: 0 1px 1px 0;
-      transform: translate(200%, -50%) rotate(-45deg);
-    }
-  }
-}
 .home {
+  .nav-arrow {
+    position: absolute;
+    z-index: 100;
+    top: 20%;
+    left: 48px;
+    width: pxToRem(155);
+    @media (max-width: $screenExtraSmall) {
+      width: pxToRem(80);
+      left: 38px;
+    }
+    &-up,
+    &-down {
+      width: 1.2rem;
+      height: 1.2rem;
+      // @media (max-width: $screenExtraSmall) {
+      //   width: pxToRem(80);
+      // }
+      border: 2px solid $primary;
+      border-width: 0 2px 2px 0;
+      transform: rotate(-135deg);
+      cursor: pointer;
+      &.active {
+        border-color: #000;
+      }
+    }
+    &-down {
+      transform: rotate(45deg);
+    }
+    .line {
+      width: 1px;
+      height: 38px;
+      background: $primary;
+    }
+  }
+
+  .section1 {
+    position: relative;
+    // height: pxToRem(1430);
+    img {
+      //   height: 100%;
+      width: 65.23%;
+    }
+    &__content {
+      max-width: 50%;
+      position: absolute;
+      bottom: 40%;
+      right: 41.5%;
+      @media (max-width: $screenLarge) {
+        right: 32%;
+      }
+      @media (max-width: $screenSmall) {
+        bottom: 20%;
+      }
+      @media (max-width: $screenExtraSmall) {
+        bottom: 10%;
+      }
+      p {
+        color: $textDarkGrey;
+        @include typoFromPx(21.5, 500, 22.34);
+      }
+      h2 {
+        letter-spacing: 6pt;
+        @include typoFromPx(48.5, 800, 48.34);
+        text-shadow: 0px 26px 81px rgba(0, 15, 26, 0);
+        @media (max-width: $screenExtraXSmall) {
+          @include typoFromPx(28.5, 800, 28.34);
+        }
+      }
+    }
+    &__gear {
+      position: absolute !important;
+      bottom: 24%;
+      right: calc(65.23% + 60px);
+      @include typoFromPx(21.5, 500, 22.34);
+      @media (max-width: $screenSmall) {
+        bottom: 10%;
+      }
+      @media (max-width: $screenExtraSmall) {
+        right: 70%;
+        bottom: 0;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: pxToRem(30);
+        height: pxToRem(30);
+        border: 2px solid $primary;
+        border-width: 0 1px 1px 0;
+        transform: translate(200%, -50%) rotate(-45deg);
+      }
+    }
+  }
 
   .section2 {
     margin-top: pxToRem(400);
@@ -54,16 +107,38 @@
     &__content {
       position: absolute;
       top: 50%;
-      right: 6%;
+      right: 8%;
       transform: translate(0, -58%);
       width: 50%;
-      //   height: pxToRem(433);
+      min-width: pxToRem(1780);
       border: 3px solid $primary;
-      padding: 40px 40px 0;
+      padding: 40px 50px 0;
+      @media (max-width: $screenLarge) {
+        right: 4%;
+      }
+      @media (max-width: $screenSmall) {
+        padding: 20px 20px 0;
+        background: #ffffff59;
+        backdrop-filter: blur(1px);
+      }
+      @media (max-width: $screenExtraSmall) {
+        top: 80%;
+      }
+      @media (max-width: $screenExtraXSmall) {
+        top: 65%;
+        min-width: 80%;
+      }
+
       p {
-        width: 50%;
+        width: 40%;
         @include typoFromPx(12.5, 400, 39.34);
         color: $textLightGrey;
+        @media (max-width: $screenExtraSmall) {
+          width: 60%;
+        }
+        @media (max-width: $screenExtraXSmall) {
+          width: 80%;
+        }
       }
       .arrow {
         position: absolute;
@@ -82,15 +157,28 @@
       top: 34%;
       right: 37%;
       letter-spacing: 6pt;
-      @include typoFromPx(48.5, 700, 22.34);
+      @include typoFromPx(48.5, 700, 48.34);
       text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+      @media (max-width: $screenExtraSmall) {
+        max-width: 50%;
+        right: 20%;
+        top: 20%;
+        @include typoFromPx(28.5, 700, 28.34);
+      }
+      @media (max-width: $screenExtraXSmall) {
+        @include typoFromPx(28.5, 700, 28.34);
+        top: 14%;
+      }
     }
     &__sub {
       position: absolute;
-      top: 45%;
-      right: 36%;
+      top: 48%;
+      right: 34%;
       @include typoFromPx(21.5, 500, 22.34);
       text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+      @media (max-width: $screenExtraXSmall) {
+        top: 30%;
+      }
     }
   }
 
@@ -100,7 +188,6 @@
     padding: pxToRem(400) 0;
     position: relative;
     img {
-      //   height: 100%;
       width: 68.4%;
     }
     &__content {
@@ -109,9 +196,24 @@
       left: 6%;
       transform: translate(0, -50%);
       width: 50%;
-      //   height: pxToRem(433);
+      min-width: pxToRem(1811);
       border: 3px solid $primary;
-      padding: 20px 50px 20px;
+      padding: 20px 40px 20px;
+      @media (max-width: $screenLarge) {
+        left: 4%;
+      }
+      @media (max-width: $screenSmall) {
+        background: #ffffff59;
+        backdrop-filter: blur(1px);
+      }
+      @media (max-width: $screenExtraSmall) {
+        position: unset;
+        transform: translate(20%, -30%);
+      }
+      @media (max-width: $screenExtraXSmall) {
+        transform: translate(20%, -20%);
+        min-width: 80%;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -123,9 +225,12 @@
         background: url('@/assets/images/text-decor.png') no-repeat center/100%;
       }
       p {
-        width: 50%;
+        width: 46%;
         @include typoFromPx(12.5, 400, 39.34);
         color: $textLightGrey;
+        @media (max-width: $screenExtraSmall) {
+          width: 66%;
+        }
       }
       .arrow {
         position: absolute;
@@ -144,15 +249,35 @@
         top: 34%;
         right: -40%;
         letter-spacing: 6pt;
-        @include typoFromPx(48.5, 700, 22.34);
+        @include typoFromPx(48.5, 700, 48.34);
         text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+        @media (max-width: $screenExtraSmall) {
+          width: 50%;
+          top: -64%;
+          right: unset;
+          left: 24%;
+        }
+        @media (max-width: $screenExtraXSmall) {
+          @include typoFromPx(28.5, 700, 28.34);
+        }
+        @media (max-width: $screenExtraXSmall) {
+          top: -40%;
+        }
       }
       .sub {
         position: absolute;
-        top: 48%;
+        top: 54%;
         right: 1%;
         @include typoFromPx(21.5, 500, 22.34);
         text-shadow: 0px 26px 81px rgba(0, 15, 26, 0.6);
+        @media (max-width: $screenExtraSmall) {
+          top: -24%;
+          right: unset;
+          left: 24%;
+        }
+        @media (max-width: $screenExtraXSmall) {
+          top: -18%;
+        }
       }
     }
   }
@@ -162,6 +287,9 @@
     h2 {
       letter-spacing: 8pt;
       @include typoFromPx(60.5, 700, 65.34);
+      @media (max-width: $screenExtraXSmall) {
+        @include typoFromPx(40.5, 700, 40.34);
+      }
     }
     &__under-title {
       width: pxToRem(1101);
@@ -184,6 +312,9 @@
           @include typoFromPx(26.5, 800, 26.34);
           color: $textDarkGrey;
           white-space: nowrap;
+          @media (max-width: $screenMedium) {
+            white-space: unset;
+          }
         }
         p {
           // @include typoFromPxO(30, 400, 1.5);
@@ -206,6 +337,11 @@
               border: 3px solid #000;
               border-width: 0 2px 2px 0;
               transform: translate(200%, -50%) rotate(-45deg);
+              @media (max-width: $screenExtraSmall) {
+                width: 4px;
+                height: 4px;
+                border-width: 0 1px 1px 0;
+              }
             }
           }
         }
@@ -217,12 +353,22 @@
       .detail1 {
         // width: 80%;
         img {
-          width: 51%;
+          width: 50.3%;
           min-width: pxToRem(1912);
+          @media (max-width: $screenLarge) {
+            min-width: unset;
+          }
         }
         .des {
           width: fit-content;
           margin-left: pxToRem(370);
+          @media (max-width: $screenLarge) {
+            margin-left: pxToRem(240);
+          }
+          @media (max-width: $screenMedium) {
+            margin-left: 0;
+            width: 50%;
+          }
 
           position: relative;
           &::after {
@@ -234,6 +380,9 @@
             width: 0;
             height: pxToRem(277);
             border: 1px solid #000;
+            @media (max-width: $screenMedium) {
+              left: 30%;
+            }
           }
 
           h5 {
@@ -261,12 +410,28 @@
         bottom: -2%;
         transform: translateX(-92%);
         width: pxToRem(1174);
+        z-index: 1;
+        @media (max-width: $screenLarge) {
+          bottom: -10%;
+        }
+        @media (max-width: $screenExtraSmall) {
+          left: 100%;
+        }
+        @media (max-width: $screenExtraSmall) {
+          width: 50%;
+        }
         img {
           width: 100%;
           min-width: pxToRem(1174);
+          @media (max-width: $screenExtraSmall) {
+            min-width: 100%;
+          }
         }
         .des {
           margin-left: pxToRem(400);
+          @media (max-width: $screenExtraSmall) {
+            margin-left: 20px;
+          }
 
           position: relative;
           &::before,
@@ -308,12 +473,20 @@
           min-width: pxToRem(1360);
           margin-right: 44px;
           margin-top: -22px;
+          @media (max-width: $screenExtraSmall) {
+            min-width: 50%;
+            margin-top: -8px;
+          }
+
           &.image-decor-left {
             position: absolute;
             width: pxToRem(868);
             min-width: unset;
             right: 47%;
             bottom: 26%;
+            @media (max-width: $screenExtraSmall) {
+              width: 40%;
+            }
           }
           &.image-decor-bottom {
             position: absolute;
@@ -330,6 +503,15 @@
         }
         .des {
           width: pxToRem(928);
+          @media (max-width: $screenExtraSmall) {
+            width: 50%;
+          }
+          h5 {
+            @media (max-width: $screenExtraSmall) {
+              margin-left: auto;
+              width: 90%;
+            }
+          }
           p {
             max-width: pxToRem(1420);
           }
@@ -345,9 +527,16 @@
         position: absolute;
         bottom: 41%;
         right: 47%;
+        @media (max-width: $screenExtraSmall) {
+          min-width: 50%;
+          right: 50%;
+        }
         img {
           width: 100%;
           margin-top: -24px;
+          @media (max-width: $screenExtraSmall) {
+            margin-top: 0;
+          }
         }
         .num {
           position: relative;
@@ -357,11 +546,14 @@
       }
     }
     .list-items {
-      width: 80%;
+      width: 82%;
       max-width: pxToRem(3200);
       margin-left: pxToRem(200);
       margin-bottom: pxToRem(400);
-
+      @media (max-width: $screenExtraSmall) {
+        width: 100%;
+        margin: 0 auto pxToRem(400);
+      }
       img {
         width: pxToRem(327);
         height: pxToRem(327);

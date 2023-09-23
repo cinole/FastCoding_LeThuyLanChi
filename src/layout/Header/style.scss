@@ -1,10 +1,14 @@
-@import '@/style/_typography.scss';
-@import '@/style/_color.scss';
-@import '@/style/_helper.scss';
+@import '@/style/_variables.scss';
 
 .header {
   position: absolute;
   z-index: 99;
+  @media (max-width: $screenSmall) {
+    backdrop-filter: blur(1px);
+  }
+  button {
+    filter: invert(1);
+  }
   &__logo {
     position: relative;
     width: pxToRem(438);
@@ -28,33 +32,56 @@
   }
   &__nav {
     position: relative;
-    margin-left: pxToRem(296);
-    li a {
-      @include typoFromPx(15, 700, 22.34);
-      &.active {
-        background-color: unset !important;
-        @extend .line-left;
-        // position: relative;
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   top: 50%;
-        //   left: 0;
-        //   transform: translate(-100%, -50%);
-        //   width: 77px;
-        //   height: 3px;
-        //   background: $primary;
-        // }
+    margin-left: pxToRem(200);
+    @media (max-width: $screenExtraXSmall) {
+      margin-left: 1rem;
+    }
+    @media (max-width: $screenExtraSmall) {
+      width: fit-content;
+      background: #ffffff59;
+      backdrop-filter: blur(1px);
+      padding: 1rem 2rem;
+    }
+
+    li {
+      a {
+        white-space: nowrap;
+        color: #000;
+        @include typoFromPx(15, 700, 22.34);
         &::after {
           content: '';
           position: absolute;
           top: 50%;
           right: 0;
-          transform: translate(50%, -50%);
-          border-radius: 50%;
-          background-color: $primary;
-          width: 6px;
-          height: 6px;
+          transform: translate(0, -50%);
+          transition: all 0.16s linear;
+        }
+        &:hover {
+          color: #000;
+          background-color: unset !important;
+          @extend .line-left;
+          &::after {
+            border-radius: 50%;
+            background-color: $primary;
+            width: 6px;
+            height: 6px;
+          }
+        }
+        @media (max-width: $screenExtraXSmall) {
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
+      }
+      @media (min-width: $screenExtraSmall) {
+        &:nth-of-type(3) a,
+        &:nth-of-type(4) a,
+        &:nth-of-type(5) a {
+          color: #fff;
+          &:hover {
+            color: #fff;
+          }
         }
       }
     }

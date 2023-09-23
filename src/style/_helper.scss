@@ -35,6 +35,8 @@ html {
 }
 
 body {
+  width: fit-content;
+  margin: 0 auto;
   font-size: 1rem;
   color: #000;
   scroll-behavior: smooth;
@@ -47,9 +49,9 @@ body {
   @media (max-width: $screenXLarge) {
     max-width: 100vw;
   }
-  .wp-main {
-    overflow-x: hidden;
-  }
+  // .wp-main {
+  //   overflow-x: hidden;
+  // }
 }
 // :root {
 //   scroll-behavior: smooth;
@@ -236,7 +238,7 @@ button {
   &-left-black::before {
     top: 50%;
     left: 0;
-    transform: translate(-120%, -50%);
+    transform: translate(-100%, -50%);
   }
   &-right::before,
   &-right-black::before {

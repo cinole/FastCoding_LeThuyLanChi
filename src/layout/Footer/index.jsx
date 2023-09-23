@@ -1,21 +1,11 @@
-// import { LINK_URL } from '@/constants'
-// import IconFb from '@/assets/icons/footer-fb.svg'
-// import IconMail from '@/assets/icons/mail.svg'
-// import IconTwit from '@/assets/icons/footer-twitter.svg'
-// import IconTele from '@/assets/icons/footer-telegram.svg'
-// import IconPhone from '@/assets/icons/phone.svg'
-// import IconUtube from '@/assets/icons/footer-youtube.svg'
-// import IconToptop from '@/assets/icons/footer-tiktok.svg'
-// import IconDiscord from '@/assets/icons/footer-discord.svg'
 import Logo from '@/assets/images/logo.png'
-
 import './style.scss'
 
 const Index = () => {
   return (
     <div className="footer p-5">
-      <div className="d-flex flex-wrap justify-content-between">
-        <div className='d-flex flex-column justify-content-between'>
+      <div className="d-flex flex-wrap justify-content-between gap-5">
+        <div className='d-flex flex-column justify-content-between gap-5'>
           <div className="d-flex justify-content-between gap-5">
             <img src={Logo} alt="" />
             <div className="list-options d-flex flex-wrap align-items-center text-uppercase">

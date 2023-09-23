@@ -1,11 +1,10 @@
-@import '@/style/_typography.scss';
-@import '@/style/_color.scss';
-@import '@/style/_helper.scss';
+@import '@/style/_variables.scss';
 
 .footer {
   background: #d5d5d5;
+  width: 100%;
   & > div {
-    width: 96%;
+    max-width: pxToRem(3400);
     margin: 0 auto;
   }
   img {
@@ -13,7 +12,10 @@
   }
   .list-options,
   .list-socials {
-    gap: 60px;
+    gap: 3.75rem;
+    @media (max-width: $screenExtraSmall) {
+      gap: 2rem;
+    }
     div {
       color: #919191;
       @include typoFromPx(15.5, 600, 22.34);

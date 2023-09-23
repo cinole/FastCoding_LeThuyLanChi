@@ -13,11 +13,11 @@
 }
 
 @mixin typoFromPx($font-size, $font-weight, $line-height) {
-  $s: calc($font-size * 12 / 20);
-  $h: calc($line-height * 12 /20);
-  font-size: #{$s}pt;
+  $s: calc($font-size * 16 / 12 / 24);
+  $h: calc($line-height * 16 /12 / 24);
+  font-size: #{$s}rem;
   font-weight: $font-weight;
-  line-height: #{$h}pt;
+  line-height: #{$h}rem;
 }
 
 @mixin typo($font-size, $font-weight, $line-height) {

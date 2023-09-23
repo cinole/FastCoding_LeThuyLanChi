@@ -10,17 +10,17 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  // display: none;
+  display: none;
   background-color: #000;
 }
 *::-webkit-scrollbar {
-  // display: none;
+  display: none;
   width: 4px;
   height: 4px;
-  background-color: #8A8D9B;
+  background-color: #8a8d9b;
 }
 *::-webkit-scrollbar-thumb {
-  // display: none;
+  display: none;
   background-color: $primary;
   border-radius: 4px;
 }
@@ -41,13 +41,13 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
 }
 
 ::placeholder {
@@ -92,55 +92,58 @@ a {
   text-decoration: none;
 }
 
-// Tooltip
-.MuiTooltip-popper {
-  transition: all 0.16s 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  > div {
-    transition: all 0.4s 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    background: $bgSection;
-  }
-  .arrow {
-    background: #10191c71;
-    color: #10191c71;
-  }
+// fullpagesjs
+.fp-watermark {
+  display: none !important;
 }
-
-.slick-slider {
-  .slick-dots {
-    translate: 0 1rem;
-    li {
-      height: 6px;
-      border-radius: 3px;
-      background: $primary;
-      opacity: 0.4;
-      @extend .trans-cub;
-      &.slick-active {
-        opacity: 1;
+#fp-nav {
+  position: absolute !important;
+  &.fp-left {
+    left: 48px !important;
+    @media (max-width: $screenExtraSmall) {
+      top: 45% !important;
+      left: 28px  !important;
+    }
+  }
+  li {
+    width: fit-content !important;
+    height: fit-content !important;
+    margin: 0 auto !important;
+    a {
+      margin: 8px;
+    }
+  }
+  @for $i from 1 through 5 {
+    li:nth-of-type(#{$i}) a {
+      width: pxToRem(80);
+      height: pxToRem(80);
+      transition: all 0.16s linear;
+      span {
+        display: none;
       }
-      button::before {
-        content: '';
+      &::after {
+        content: '0#{$i}';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include typoFromPx(17.5, 600, 36.34);
+        color: $textGrey;
+        transition: all 0.16s linear;
+        z-index: 2;
+      }
+      &.active {
+        width: pxToRem(155);
+        height: pxToRem(155);
+        margin: 1.6rem 0;
+        border-radius: 50%;
+        background-color: #ffffffb2;
+        box-shadow: 0px 10px 36px 0px rgba(0, 15, 26, 0.21);
+        &::after {
+          @include typoFromPx(32.5, 700, 18.34);
+          color: #000;
+        }
       }
     }
   }
-}
-
-.MuiBackdrop-root .MuiModal-backdrop {
-  background: rgba(16, 25, 28, 0.5);
-  border: 1px solid rgba(255, 215, 137, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-// Popover
-.MuiPopover-root {
-  .MuiPopover-paper {
-    overflow: visible;
-    background: unset !important;
-    background-image: unset !important;
-    box-shadow: unset;
-    // margin-left: 1.5rem;
-  }
-}
-
-.MuiPopper-root{
-  transform-origin: 0;
 }
