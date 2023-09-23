@@ -4,7 +4,7 @@ import './style.scss'
 const Index = () => {
   return (
     <div className="footer p-5">
-      <div className="d-flex flex-wrap justify-content-between gap-4 gap-xxl-5">
+      <div className="d-flex flex-wrap justify-content-between gap-4">
         <div className='d-flex flex-column justify-content-between gap-5'>
           <div className="d-flex justify-content-between gap-5">
             <img src={Logo} alt="" />
